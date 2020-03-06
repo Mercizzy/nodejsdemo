@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>news</h1>
+  <a href="/addpage">新增</a>
+  <table border="1" width="100%">
+    <tr>
+      <th>名称</th>
+      <th>Id</th>
+      <th>操作</th>
+    </tr>
+  
+    {{each data}}
+      <tr>
+        <td>{{$value.dicname}}</td>
+        <td>{{$value.dicid}}</td>
+        <td>
+          <a href="/updatepage?id={{@ $value._id}}">修改</a> | 
+          <a href="javascript:isdelete({{$value}})">删除</a>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+  
+  <script>
+    function isdelete(obj) {
+      let r = window.confirm('确认删除'+obj.dicname+'吗？')
+      if(r) {
+        window.location = '/delete?id='+obj._id
+      }
+    }
+
+  </script>
+</body>
+</html>

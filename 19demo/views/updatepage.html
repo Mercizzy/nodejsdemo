@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>修改页面</h1>
+  <form action="/doupdate" method="post">
+    <input type="hidden" name="id" value="{{@ data._id}}">
+    <label for="">名称</label><input type="text" name="dicname" value="{{data.dicname}}"><br />
+    <label for="">ID</label><input type="text" name="dicid" value="{{data.dicid}}"><br />
+    <input type="submit" value="修改">
+  </form>
+</body>
+</html>
